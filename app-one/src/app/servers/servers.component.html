@@ -1,0 +1,28 @@
+<label>Szerver neve</label>
+<!-- <input 
+type="text"
+class="form-control"
+(input)="onUpdateServerName($event)"
+> -->
+<input 
+type="text"
+class="form-control"
+[(ngModel)]="serverName"
+>
+<!-- <p>{{serverName}}</p> -->
+
+<button [disabled]="!allowNewServer"
+class="btn btn-primary"
+(click)="onCreateServer()"
+>Szerver hozzáadása</button>
+<!-- <p [innerText]="allowNewServer"></p> -->
+<!-- <p>{{serverCreationStatus}}</p> -->
+<p *ngIf="serverCreated; else noServer">
+    A szervert elkészült, a szerver neve {{serverName}}
+</p>
+<ng-template #noServer>
+    <p>
+    Nem készült el szerver!
+    </p>
+</ng-template>
+<app-server *ngFor="let server of servers"></app-server>
