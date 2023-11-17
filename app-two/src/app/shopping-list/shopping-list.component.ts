@@ -11,4 +11,8 @@ ingredients: Ingridient[] = [
   new Ingridient("Almák", 5),
   new Ingridient("Paradicsomok", 10)
 ];
+
+onIngredientAdded(ingredient: Ingridient) {
+  this.ingredients.push(ingredient)
+}
 }
